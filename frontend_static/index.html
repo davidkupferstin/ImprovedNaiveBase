@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת חיזוי נאיב בייס</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>מערכת חיזוי נאיב בייס</h1>
+
+        <section class="card">
+            <h2>אימון מודל (העלאת קובץ CSV)</h2>
+            <form id="uploadForm">
+                <input type="file" id="csvFile" accept=".csv" required>
+                <button type="submit">אמן מודל</button>
+            </form>
+            <div id="uploadStatus" class="message"></div>
+        </section>
+
+        <section class="card">
+            <h2>סטטוס מודל</h2>
+            <div id="modelStatus">
+                <p>סטטוס: <span id="statusText">טוען...</span></p>
+                <p>דיוק: <span id="accuracyText">--</span></p>
+                <p>עמודת יעד: <span id="targetColumnText">--</span></p>
+            </div>
+            <button id="refreshStatusBtn">רענן סטטוס</button>
+        </section>
+
+        <section class="card" id="predictionSection" style="display: none;">
+            <h2>בצע חיזוי</h2>
+            <form id="predictionForm">
+                <div id="featureInputs" class="feature-inputs">
+                    <!-- Dynamic feature inputs will be inserted here by JavaScript -->
+                </div>
+                <button type="submit">בצע חיזוי</button>
+            </form>
+            <div id="predictionResult" class="message"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
